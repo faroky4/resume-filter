@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block title %}Job Details{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    <div class="container">
+        <div class="form-group">
+            <label for="business">Line of business</label>
+            <input type="text" class="form-control" name="business" id="business">
+        </div>
+        <div class="form-group">
+            <label for="jobtitle">Job Title</label>
+            <input type="text" class="form-control" name="job-title" id="job">
+        </div>
+        <div class="form-group">
+            <label for="description">Job Description</label>
+            <textarea class="form-control" rows="5" name="description" id="requirements"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="requirements">Requirements</label>
+            <textarea class="form-control" rows="5" name="requirements" id="requirements"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="keywords">KeyWords</label>
+            <textarea class="form-control" rows="5" name="keywords" id="bonus"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="bonus">bonus</label>
+            <textarea class="form-control" rows="5" name="bonus" id="bonus"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Start Filter</button>
+    </div>
+</form>
+
+{% endblock %}
+

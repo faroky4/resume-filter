@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block title %}Candidates{% endblock %}
+
+
+{% block content %}
+<h1 align="center"> Candidates </h1>
+<ul class="list-group list-group-flush" id="candidates">
+    {% for candi in user.candidates %}
+        {% if candi.isMatch %}
+        <div class="best-plan">	
+            <div class="container">
+			    <div class="b_plan_body">					
+			    	<div class="row-md-6">
+			    		<div class="col-md-12 col-sm-12">
+			    			<div class="b-price-plan">
+			    				<div class="b-price-plan__item b-price-plan__head">
+			    					<h3>{{candi.name}}</h3>
+			    				</div>
+			    				<div class="b-price-plan__item b-price-plan__cost">											
+			    					<div >{{candi.rank}}</div>
+			    				</div>
+			    				<ul class="p_plan_list">
+			    					<li><i class="fa fa-laptop" aria-hidden="true"></i>E-mail: <span>{{candi.candiEmail}}</span></li>
+			    					<li><i class="fa fa-hdd-o" aria-hidden="true"></i> Phone:  <span>{{candi.phoneNum}}</span></li>										
+			    					<li><i class="fa fa-database" aria-hidden="true"></i>Skills: 
+										<span>{% for skill in candi.skills %}
+											<span ><rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+												style="fill:red;stroke:black;stroke-width:5;opacity:0.5">{{ skill }}</rect></span>
+										{% endfor %}
+										</span></li>
+			    				</ul>								
+			    				<div class="b-price-plan__item price_foot">																			
+			    					<a href="{{candi.linkToCV}}" class="btn btn-warning price_btn" target="_blank">
+			    						<span>Open resume</span> <i class="fa fa-caret-right" aria-hidden="true"></i>
+			    					</a>
+			    				</div>
+			    			</div>
+			    		</div>
+			    	</div>
+			    </div>
+            </div>
+        </div>		
+        {% endif %}}		                            
+    {% endfor %}
+</ul>
+{% endblock %}

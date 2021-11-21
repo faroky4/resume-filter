@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <form method="POST">
+        <div class="container">
+            <p><h1>Hello , </h1>
+                <h2>You're at the smart resume filter site,
+                We will be happy to help you.
+                To get started please direct us to the CV folder</h3></p>
+            <br>
+            <br>
+            <label for="basic-url"><h4>Link to a resume folder </h4></label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="link" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+            <button type="submit" class="btn btn-primary">Get Resumes</button>
+        </div>
+    </form>
+
+{% endblock %}
+
